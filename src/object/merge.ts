@@ -54,7 +54,7 @@ export function merge(target: any, source: any) {
       target[key] = merge(targetValue ?? [], sourceValue);
     } else if (isObjectLike(targetValue) && isObjectLike(sourceValue)) {
       target[key] = merge(targetValue ?? {}, sourceValue);
-    } else if (targetValue === undefined || sourceValue !== undefined) {
+    } else if (sourceValue !== undefined) {
       target[key] = sourceValue;
     }
   }
